@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Button } from "@mui/material/";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
+import {API} from "./global";
 import { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -33,7 +34,7 @@ export function EditMovie() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   useEffect(() => {
-    fetch(`https://668ea164bf9912d4c92f2326.mockapi.io/movies/${id}`)
+    fetch(`${API}/movies/${id}`)
       .then((data) => data.json())
       .then((mv) => setMovie(mv));
   }, []);
@@ -68,7 +69,7 @@ function EditMovieForm({ movie }) {
     // 2. data(updateMovie) - body & JSON
     // 3. Header - JSON
 
-    fetch(`https://668ea164bf9912d4c92f2326.mockapi.io/movies/${movie.id}`, {
+    fetch(`${API}/movies/${movie.id}`, {
       // already movie has id we are using...
       method: "PUT",
       body: JSON.stringify(updateMovie),
