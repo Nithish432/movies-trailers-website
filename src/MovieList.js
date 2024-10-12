@@ -35,12 +35,12 @@ function MovieList() {
     <div className="movie-list-container">
       {movies.map((element, index) => (
         <Movie
-          key={element.id}
+          key={element.id} // change to _id
           movie={element}
-          id={element.id}
+          id={element.id} // change to _id
           deleteButton={
             <IconButton
-              onClick={() => deleteMovie(element.id)}
+              onClick={() => deleteMovie(element.id)} // change to _id
               color="error"
               aria-label="delete"
             >
@@ -50,7 +50,7 @@ function MovieList() {
           editButton={
             <IconButton
               color="secondary"
-              onClick={() => navigate(`/movies/edit/${element.id}`)}
+              onClick={() => navigate(`/movies/edit/${element.id}`)} // change to _id
             >
               <EditIcon />
             </IconButton>
