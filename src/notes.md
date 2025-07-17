@@ -18,7 +18,7 @@
 2. Large `{key: value}`
 3. Updating it does not cost performance
 4. To access VDOM you could use hooks (setState)
-5. Once the update is done on the virtual DOm, then the real DOM is updated
+5. Once the update is done on the virtual DOM, then the real DOM is updated
 6. Comparison - Reconciliation -VDOM & Real Dom
 7. Key helps is quickly compare the changes
 8. `document.*` in React - Loses Performance
